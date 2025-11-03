@@ -46,6 +46,8 @@ apt_autoclean: yes
 # .deb packages to install.
 apt_deb_packages: []
 
+# manage general and periodic entries via template
+apt_general_periodic: true
 # https://people.debian.org/~hmh/invokerc.d-policyrc.d-specification.txt
 # skip config if less than 0 (-1=disable)
 apt_policy: 101
