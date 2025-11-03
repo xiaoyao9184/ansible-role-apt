@@ -21,6 +21,27 @@
 #     repo: 'ppa:nginx/stable'
 #     state: present
 #     update_cache: yes
+# apt_deb822_repositories:
+#   - name: debian
+#     state: absent
+#   - name: debian
+#     suites:
+#       - trixie
+#       - trixie-updates
+#     uris: https://debian.mirror.constant.com
+#     components:
+#       - main
+#       - contrib
+#       - non-free-firmware
+#     signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
+#   - name: debian-security
+#     suites: trixie-security
+#     uris: http://security.debian.org/debian-security
+#     components:
+#       - main
+#       - contrib
+#       - non-free-firmware
+#     signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
 
 # depenencies packages
 apt_dependencies:

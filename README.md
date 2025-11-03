@@ -74,6 +74,27 @@ Here is a list of all the default variables for this role, which are also availa
 #     repo: 'ppa:nginx/stable'
 #     state: present
 #     update_cache: yes
+# apt_deb822_repositories:
+#   - name: debian
+#     state: absent
+#   - name: debian
+#     suites:
+#       - trixie
+#       - trixie-updates
+#     uris: https://debian.mirror.constant.com
+#     components:
+#       - main
+#       - contrib
+#       - non-free-firmware
+#     signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
+#   - name: debian-security
+#     suites: trixie-security
+#     uris: http://security.debian.org/debian-security
+#     components:
+#       - main
+#       - contrib
+#       - non-free-firmware
+#     signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
 
 # depenencies packages
 apt_dependencies:
@@ -182,6 +203,8 @@ apt_remount_filesystems: []
 
 # repositories to register
 apt_repositories: []
+# deb822 formatted repositories
+apt_deb822_repositories: []
 # gpg keys for external repositories
 apt_keys: []
 # HTTP proxy server (optional)
