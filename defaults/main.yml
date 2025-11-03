@@ -129,6 +129,8 @@ apt_remount_filesystems: []
 
 # repositories to register
 apt_repositories: []
+# deb822 formatted repositories
+apt_deb822_repositories: []
 # gpg keys for external repositories
 apt_keys: []
 # HTTP proxy server (optional)
