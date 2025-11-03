@@ -47,6 +47,7 @@ apt_autoclean: yes
 apt_deb_packages: []
 
 # https://people.debian.org/~hmh/invokerc.d-policyrc.d-specification.txt
+# skip config if less than 0 (-1=disable)
 apt_policy: 101
 # whether or not suggested packages should be installed.
 apt_install_suggests: no

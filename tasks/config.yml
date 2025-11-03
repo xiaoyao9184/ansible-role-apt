@@ -68,3 +68,4 @@
     content: "exit {{ apt_policy }}"
     dest: /usr/sbin/policy-rc.d
     mode: "0755"
+  when: apt_policy | int >= 0
