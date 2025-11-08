@@ -48,6 +48,8 @@ apt_dependencies:
   - aptitude
   - python3-apt
   - python3-pycurl
+# do cache update
+apt_update: true
 # sets the amount of time the cache is valid
 apt_cache_valid_time: 3600
 # upgrade system: safe | full | dist
@@ -65,7 +67,10 @@ apt_autoclean: yes
 # .deb packages to install.
 apt_deb_packages: []
 
+# manage general and periodic entries via template
+apt_general_periodic: true
 # https://people.debian.org/~hmh/invokerc.d-policyrc.d-specification.txt
+# skip config if less than 0 (-1=disable)
 apt_policy: 101
 # whether or not suggested packages should be installed.
 apt_install_suggests: no

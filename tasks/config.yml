@@ -7,6 +7,7 @@
     owner: "root"
     group: "root"
     mode: "0644"
+  when: apt_general_periodic | bool
   with_items:
     - "etc/apt/apt.conf.d/10general"
     - "etc/apt/apt.conf.d/10periodic"
@@ -68,3 +69,4 @@
     content: "exit {{ apt_policy }}"
     dest: /usr/sbin/policy-rc.d
     mode: "0755"
+  when: apt_policy | int >= 0
