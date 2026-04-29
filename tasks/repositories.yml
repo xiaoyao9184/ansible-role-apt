@@ -1,6 +1,18 @@
 ---
 
+- name: Deleting apt repository in sources.list
+  when:
+    - item.filename | default('',true) == '/etc/apt/sources.list'
+    - item.state | default('present',true) == 'absent'
+  ansible.builtin.lineinfile:
+    path: "{{ item.filename }}"
+    regexp: '^{{ item.repo | regex_escape }}$'
+    state: absent
+  with_items: "{{ apt_repositories }}"
+
 - name: Adding apt repository
+  when:
+    - item.state | default('present',true) != 'absent'
   apt_repository:
     codename: "{{ item.codename | default(omit) }}"
     filename: "{{ item.filename | default(omit) }}"
