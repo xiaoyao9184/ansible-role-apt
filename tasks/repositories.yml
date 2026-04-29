@@ -11,6 +11,8 @@
   with_items: "{{ apt_repositories }}"
 
 - name: Adding apt repository
+  when:
+    - item.state | default('present',true) != 'absent'
   apt_repository:
     codename: "{{ item.codename | default(omit) }}"
     filename: "{{ item.filename | default(omit) }}"
